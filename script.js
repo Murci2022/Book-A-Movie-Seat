@@ -1,19 +1,15 @@
 //click on seat change color
+//count selected seats
 
 
-const btn = document.querySelector("button")
-
-btn.addEventListener("click",function(){
-    console.log("click")
-})
-
-const seats = document.querySelectorAll(".seat")
-
+const container = document.querySelector(".container")
+const seats = document.querySelectorAll(".row .seat:not(.occupied)")
 console.log(seats)
 
-seats.forEach((seat)=>{
-    seat.addEventListener("click",function(){
-        seat.classList.add("selected")
-        
-    })
-})
+
+const count = document.getElementById("count")
+const total = document.getElementById("total")
+const movieSelect = document.getElementById("movie")
+const ticketPrice = Number(movieSelect.value)
+
+console.log(typeof ticketPrice)
