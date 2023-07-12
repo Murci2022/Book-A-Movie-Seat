@@ -15,7 +15,10 @@ const ticketPrice = parseInt(movieSelect.value)
 //Update total and count 
 function updateSelectedCount(){
     const selectedSeats = document.querySelectorAll(".row .seat.selected");
-    console.log("This",selectedSeats)
+    const selectedSeatsCount = selectedSeats.length
+    console.log(selectedSeatsCount)
+    count.innerHTML = selectedSeatsCount;
+
 }
 
 
@@ -27,7 +30,7 @@ container.addEventListener("click",(e)=>{
     && !e.target.classList.contains("occupied")
     ){
       e.target.classList.toggle("selected");
-    updateSelectedCount()
+      updateSelectedCount()
     }
   
 })
