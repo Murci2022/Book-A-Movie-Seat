@@ -11,6 +11,7 @@ const count = document.getElementById("count")
 const total = document.getElementById("total")
 const movieSelect = document.getElementById("movie")
 const ticketPrice = parseInt(movieSelect.value)
+console.log(ticketPrice)
 
 //Update total and count 
 function updateSelectedCount(){
@@ -18,6 +19,7 @@ function updateSelectedCount(){
     const selectedSeatsCount = selectedSeats.length
     console.log(selectedSeatsCount)
     count.innerHTML = selectedSeatsCount;
+    total.innerHTML =selectedSeatsCount* ticketPrice
 
 }
 
