@@ -1,29 +1,33 @@
-//click on seat change color
-//count selected seats
+
 
 
 const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat:not(.occupied)")
-
-
+const movieSelect = document.getElementById("movie")
 
 const count = document.getElementById("count")
 const total = document.getElementById("total")
-const movieSelect = document.getElementById("movie")
-const ticketPrice = parseInt(movieSelect.value)
-console.log(ticketPrice)
+let ticketPrice = parseInt(movieSelect.value)
+console.log("ticketP",ticketPrice)
 
 //Update total and count 
 function updateSelectedCount(){
     const selectedSeats = document.querySelectorAll(".row .seat.selected");
     const selectedSeatsCount = selectedSeats.length
-    console.log(selectedSeatsCount)
+    console.log(selectedSeats)
     count.innerHTML = selectedSeatsCount;
     total.innerHTML =selectedSeatsCount* ticketPrice
 
 }
 
+// Movie select event
+movieSelect.addEventListener("change",()=>{
+  ticketPrice = parseInt(movieSelect.value)
+  console.log("update",ticketPrice)
+  updateSelectedCount()
+})
 
+// Seat click event 
 
 container.addEventListener("click",(e)=>{
     
