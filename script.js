@@ -20,6 +20,10 @@ function updateSelectedCount(){
     //copy selected seats into arr 
     const seatsIndex = [...selectedSeats].map((seat)  => [...seats].indexOf(seat));
 
+    //saving to local storage
+    localStorage.setItem("selectedSeats",JSON.stringify(seatsIndex))
+    console.log(typeof seatsIndex)
+
     console.log(seatsIndex)
     //Map through array 
     //return a new array indexe
