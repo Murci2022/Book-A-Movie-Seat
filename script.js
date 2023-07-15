@@ -12,6 +12,17 @@ const total = document.getElementById("total")
 let ticketPrice = parseInt(movieSelect.value)
 console.log("ticketP",ticketPrice)
 
+//save selected movie and preise
+
+function setMovieData(movieIndex,moviePrice){
+  console.log(typeof movieIndex)
+  console.log(typeof moviePrice)
+  localStorage.setItem("selectedMovieIndex",movieIndex)
+  localStorage.setItem("selectedMoviePrice",moviePrice)
+}
+
+movieSelect.sele
+
 //Update total and count 
 function updateSelectedCount(){
     const selectedSeats = document.querySelectorAll(".row .seat.selected");
@@ -46,8 +57,8 @@ function updateSelectedCount(){
 // Movie select event
 movieSelect.addEventListener("change",(e)=>{
   ticketPrice = parseInt(movieSelect.value)
- console.log(e.target.selectedIndex)
-  console.log("update",ticketPrice)
+ setMovieData(e.target.selectedIndex,e.target.value);
+
   updateSelectedCount()
 })
 
