@@ -3,7 +3,9 @@
 
 const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat:not(.occupied)")
+const allSeats = document.querySelectorAll(".row .seat")
 const movieSelect = document.getElementById("movie")
+
 
 const count = document.getElementById("count")
 const total = document.getElementById("total")
@@ -16,13 +18,13 @@ function updateSelectedCount(){
     console.log(selectedSeats)
 
     //copy selected seats into arr 
-    //Map through array 
-    //return a new array indexes
     const seatsIndex = [...selectedSeats].map(function(seat){
-      return [...seats].indexOf(seat)
+      return [...seats].indexOf(seat);
     })
+    //Map through array 
+    //return a new array indexe
 
-    console.log(seatsIndex)
+  
 
   
 
