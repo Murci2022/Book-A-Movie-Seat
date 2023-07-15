@@ -46,6 +46,7 @@ function updateSelectedCount(){
 // Movie select event
 movieSelect.addEventListener("change",(e)=>{
   ticketPrice = parseInt(movieSelect.value)
+ console.log(e.target.selectedIndex)
   console.log("update",ticketPrice)
   updateSelectedCount()
 })
