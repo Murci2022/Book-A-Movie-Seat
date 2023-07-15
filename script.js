@@ -18,9 +18,9 @@ function updateSelectedCount(){
     console.log(selectedSeats)
 
     //copy selected seats into arr 
-    const seatsIndex = [...selectedSeats].map(function(seat){
-      return [...seats].indexOf(seat);
-    })
+    const seatsIndex = [...selectedSeats].map((seat)  => [...seats].indexOf(seat));
+
+    console.log(seatsIndex)
     //Map through array 
     //return a new array indexe
 
