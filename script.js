@@ -4,6 +4,8 @@ const seats = document.querySelectorAll(".row .seat:not(.occupied)")
 const allSeats = document.querySelectorAll(".row .seat")
 const movieSelect = document.getElementById("movie")
 
+console.log(typeof seats)
+
 populateUI();
 
 const count = document.getElementById("count")
@@ -61,7 +63,13 @@ function populateUI() {
    //check if selectedSeats arr has elements
 
   if(selectedSeats.length>-0 && selectedSeats !== null ){
-    console.log("works")
+    console.log(selectedSeats)
+    selectedSeats.forEach((seat)=>{
+     const storedSeat = seats[seat]
+     console.log(storedSeat)
+    storedSeat.classList.add("selected")
+    
+    })
   }else{
     console.log("falsy")
   }
