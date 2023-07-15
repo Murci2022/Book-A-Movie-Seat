@@ -64,21 +64,22 @@ function populateUI() {
 
   if(selectedSeats.length>-0 && selectedSeats !== null ){
     console.log(selectedSeats)
-    selectedSeats.forEach((seat)=>{
+    selectedSeats.forEach((seat,index)=>{
+     
      const storedSeat = seats[seat]
-     console.log(storedSeat)
-    storedSeat.classList.add("selected")
+    
+     
+     if(selectedSeats.indexOf(index)>-1){
+       storedSeat.classList.add("selected")
+       
+    }
     
     })
-  }else{
-    console.log("falsy")
   }
-
-   
-  
-
-
-  
+  const selectedMovieIndex = localStorage.getItem("selectedMovie")
+  if(selectedMovieIndex !==null){
+    movieSelect.selectedIndex = selectedMovieIndex
+  }
 }
 
 // Movie select event
