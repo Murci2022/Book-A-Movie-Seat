@@ -53,7 +53,15 @@ function updateSelectedCount(){
     total.innerHTML =selectedSeatsCount* ticketPrice
 
 }
- 
+
+//Get data from localstorage and populate UI
+
+function populateUI() {
+  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+  
+}
+
+ console.log(selectedSeats)
 // Movie select event
 movieSelect.addEventListener("change",(e)=>{
   ticketPrice = parseInt(movieSelect.value)
